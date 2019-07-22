@@ -12,6 +12,35 @@ $contrast: #f9e618;
 $dark: #1e1e1e;
 $default-text: #111111;
 
+// replacement for Surveyor
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text:400,400i&display=swap');
+
+@font-face {
+  font-family: 'gotham-bold';
+  src: url('../fonts/Gotham-Bold.otf');
+}
+
+@font-face {
+  font-family: 'gotham-book';
+  src: url('../fonts/Gotham-Book.otf');
+}
+
+@font-face {
+  font-family: 'gotham-medium';
+  src: url('../fonts/Gotham-Medium.otf');
+}
+
+@font-face {
+  font-family: 'chocolates-bold';
+  src: url('../fonts/Chocolates-Bold.otf');
+}
+
+$gotham-book: 'Gotham-Book', Arial, sans-serif;
+$gotham-bold: 'Gotham-Bold', Arial, sans-serif;
+$gotham-medium: 'Gotham-Medium', Arial, sans-serif;
+$chocolates-bold: 'Chocolates-Bold', Arial, sans-serif;
+$crimson: 'Crimson Text', serif;
+
 .hidden {
   position:absolute;
   left:-10000px;
@@ -19,4 +48,52 @@ $default-text: #111111;
   width:1px;
   height:1px;
   overflow:hidden;
+}
+* {
+  box-sizing: border-box;
+  color: $default-text;
+}
+
+h1, h4 {
+  font-family: $chocolates-bold;
+}
+
+h2, h3 {
+  font-family: $crimson;
+}
+
+h5 {
+  font-family: $gotham-bold;
+}
+h6 {
+  font-family: $crimson;
+  font-style: italic;
+}
+p {
+  font-family: $gotham-book;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+.container {
+  border: solid 50px $white;
+  min-height: 100vh;
+  
+  &__flex {
+    display: flex;
+  }
+  &__blush {
+    background: $blush;
+  }
+  &__split_blush {
+    background: $blush;
+  }
+}
+
+.contrast_color {
+  color: $contrast;
+}
+.highlight {
+  background-color: $contrast;
 }

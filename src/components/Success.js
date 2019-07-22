@@ -14,8 +14,8 @@ class Success extends React.Component {
     
     return (
       <main role="main">
-        <div className="container">
-          <div className="headline">
+        <div className="container container__blush">
+          <div className="headline uppercase">
             <h1>"{name} always finds the best stuff."</h1>
             <h6>- Your friends, after you share this free class</h6>
           </div>

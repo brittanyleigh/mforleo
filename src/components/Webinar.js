@@ -9,7 +9,7 @@ class Webinar extends React.Component {
     return (
       <React.Fragment>
       <main role="main">
-        <div className="container">
+        <div className="container container__split_blush">
           <div className="box">
             <iframe 
               title="webinar"

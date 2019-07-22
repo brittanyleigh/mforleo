@@ -1,3 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,400i&display=swap");
+@font-face {
+  font-family: "gotham-bold";
+  src: url("../fonts/Gotham-Bold.otf");
+}
+@font-face {
+  font-family: "gotham-book";
+  src: url("../fonts/Gotham-Book.otf");
+}
+@font-face {
+  font-family: "gotham-medium";
+  src: url("../fonts/Gotham-Medium.otf");
+}
+@font-face {
+  font-family: "chocolates-bold";
+  src: url("../fonts/Chocolates-Bold.otf");
+}
 .hidden {
   position: absolute;
   left: -10000px;
@@ -5,6 +22,58 @@
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  color: #111111;
+}
+
+h1, h4 {
+  font-family: "Chocolates-Bold", Arial, sans-serif;
+}
+
+h2, h3 {
+  font-family: "Crimson Text", serif;
+}
+
+h5 {
+  font-family: "Gotham-Bold", Arial, sans-serif;
+}
+
+h6 {
+  font-family: "Crimson Text", serif;
+  font-style: italic;
+}
+
+p {
+  font-family: "Gotham-Book", Arial, sans-serif;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.container {
+  border: solid 50px #ffffff;
+  min-height: 100vh;
+}
+.container__flex {
+  display: flex;
+}
+.container__blush {
+  background: #fff0ef;
+}
+.container__split_blush {
+  background: #fff0ef;
+}
+
+.contrast_color {
+  color: #f9e618;
+}
+
+.highlight {
+  background-color: #f9e618;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -37,9 +37,9 @@ class OptIn extends React.Component {
     
     return (
 			<main role="main">
-        <div className="container">
-					<div className="headline">
-						<h1>Oh Hey Future Writing Genius</h1>
+        <div className="container container__flex container__blush">
+					<div className="headline uppercase">
+						<h1 className="contrast_color">Oh Hey Future Writing Genius</h1>
 					</div>
 					<div className="content">
 						<div className="box">
