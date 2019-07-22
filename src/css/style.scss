@@ -1,0 +1,22 @@
+// Breakpoints
+$mobile: 320px;
+$tablet: 640px;
+$laptop-sm: 1200px;
+$laptop: 1440px;
+$desktop: 1920px;
+
+// Colors
+$blush: #fff0ef; 
+$white: #ffffff;
+$contrast: #f9e618;
+$dark: #1e1e1e;
+$default-text: #111111;
+
+.hidden {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}

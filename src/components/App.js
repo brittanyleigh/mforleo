@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import OptIn from './OptIn'
 import Success from './Success'
 import Webinar from './Webinar'
-
+import '../css/style.css';
 
 const App = () => {
   return (
