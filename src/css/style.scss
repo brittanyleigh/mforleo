@@ -69,13 +69,13 @@ body {
 
 
 // type //
-h1 {
+.h1 {
   font-family: $chocolates-bold;
   color: $contrast;
   letter-spacing: 6px;
   text-transform: uppercase;
 }
-h2 {
+.h2 {
   font-family: $crimson;
   font-size: 2.4em;
   line-height: 1.5;
@@ -90,7 +90,7 @@ h2 {
     font-size: 1.5em;
   }
 }
-h3 {
+.h3 {
   font-family: $chocolates-bold;
   font-size: 3em;
   letter-spacing: 1.5px;
@@ -108,7 +108,7 @@ h3 {
     width: 100%;
   }
 }
-h4 {
+.h4 {
   font-family: $crimson;
   font-style: italic;
   font-size: 1.5em;
@@ -119,7 +119,7 @@ h4 {
     font-size: 1em;
   }
 }
-h5 {
+.h5 {
   font-family: $chocolates-bold;
   color: $contrast;
   letter-spacing: 2px;
@@ -127,18 +127,18 @@ h5 {
   margin: 0px;
   font-size: 1.1em;
 }
-h6 {
+.h6 {
   font-family: $gotham-bold;
   letter-spacing: 2px;
   text-transform: uppercase;
   line-height: 2;
 }
-p {
+.p {
   font-family: $gotham-book;
   line-height: 1.75;
   letter-spacing: .2px;
 }
-a {
+.link {
   color: $secondary_contrast;
   &:hover {
     cursor: pointer;

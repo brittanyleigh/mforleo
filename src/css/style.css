@@ -25,36 +25,36 @@ body {
   color: #111111;
 }
 
-h1 {
+.h1 {
   font-family: "Chocolates-Bold", Arial, sans-serif;
   color: #f9e618;
   letter-spacing: 6px;
   text-transform: uppercase;
 }
 
-h2 {
+.h2 {
   font-family: "Crimson Text", serif;
   font-size: 2.4em;
   line-height: 1.5;
   margin: 0.5em 0;
 }
 @media (max-width: 1919px) {
-  h2 {
+  .h2 {
     font-size: 2.2em;
   }
 }
 @media (max-width: 1439px) {
-  h2 {
+  .h2 {
     font-size: 1.9em;
   }
 }
 @media (max-width: 639px) {
-  h2 {
+  .h2 {
     font-size: 1.5em;
   }
 }
 
-h3 {
+.h3 {
   font-family: "Chocolates-Bold", Arial, sans-serif;
   font-size: 3em;
   letter-spacing: 1.5px;
@@ -64,35 +64,35 @@ h3 {
   line-height: 1.25;
 }
 @media (max-width: 1919px) {
-  h3 {
+  .h3 {
     font-size: 2.2em;
   }
 }
 @media (max-width: 1439px) {
-  h3 {
+  .h3 {
     font-size: 2em;
     text-align: center;
     width: 100%;
   }
 }
 
-h4 {
+.h4 {
   font-family: "Crimson Text", serif;
   font-style: italic;
   font-size: 1.5em;
 }
 @media (max-width: 1199px) {
-  h4 {
+  .h4 {
     font-size: 1.25em;
   }
 }
 @media (max-width: 639px) {
-  h4 {
+  .h4 {
     font-size: 1em;
   }
 }
 
-h5 {
+.h5 {
   font-family: "Chocolates-Bold", Arial, sans-serif;
   color: #f9e618;
   letter-spacing: 2px;
@@ -101,23 +101,23 @@ h5 {
   font-size: 1.1em;
 }
 
-h6 {
+.h6 {
   font-family: "Gotham-Bold", Arial, sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;
   line-height: 2;
 }
 
-p {
+.p {
   font-family: "Gotham-Book", Arial, sans-serif;
   line-height: 1.75;
   letter-spacing: 0.2px;
 }
 
-a {
+.link {
   color: #e7325b;
 }
-a:hover {
+.link:hover {
   cursor: pointer;
 }
 

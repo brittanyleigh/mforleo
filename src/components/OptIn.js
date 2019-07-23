@@ -53,8 +53,8 @@ class OptIn extends React.Component {
     if (showForm) {
       return (
         <React.Fragment>
-          <h2>Register Now</h2>
-          <h6>To save your seat in the webinar</h6>
+          <h2 className="h2">Register Now</h2>
+          <h6 className="h6">To save your seat in the webinar</h6>
           <form>
             <div>
               <label htmlFor="time" className="screen-reader-only">Time:</label>
@@ -78,9 +78,9 @@ class OptIn extends React.Component {
     } else {
       return (
         <React.Fragment>
-          <h5>Register Now:</h5>
-          <h2>5 Writing Mistakes That <br/>Are <span className="highlight">Killing Your Sales</span></h2>
-          <p className="box__p">Get the 5 easy fixes that take you from "crickets" to clamoring fans and buyers.</p>
+          <h5 className="h5">Register Now:</h5>
+          <h2 className="h2">5 Writing Mistakes That <br/>Are <span className="highlight">Killing Your Sales</span></h2>
+          <p className="p box__p">Get the 5 easy fixes that take you from "crickets" to clamoring fans and buyers.</p>
           <button className="btn btn--primary" onClick={this.handleShowForm}>
             Yes!! Save my seat!
           </button>
@@ -93,7 +93,7 @@ class OptIn extends React.Component {
   renderHeadline = () => {
     return (
       <React.Fragment>
-        <h1 className="headline__h1">Oh hey future writing genius</h1>
+        <h1 className="h1 headline__h1">Oh hey future writing genius</h1>
         <img className="callout callout--class-large hidden--laptop-sm-down" src={require("../img/FreeClass-ForDesktop.svg")} alt="free class"/>
       </React.Fragment>
     )
