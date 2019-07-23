@@ -17,7 +17,7 @@ class Success extends React.Component {
     
     return (
       <React.Fragment>
-        <h1 className="contrast_color headline__h1">"{name} always finds the best stuff."</h1>
+        <h1 className="contrast_color headline__h1 headline__h1--small">"{name} always finds the best stuff."</h1>
         <h4 className="full-width">- Your friends, after you share this free class</h4>
       </React.Fragment>
     )
@@ -29,7 +29,7 @@ class Success extends React.Component {
         <h2>You're In!</h2>
         <h6>Get ready to swim in a pile of money, because that's what happens when you get your copy ish in order.</h6>
         <hr />
-        <p>
+        <p className="box__p box__p--small">
           Check your email inbox now for a special message about your upcoming class.
           Can't find it after a few minutes?
           Write <a href="mailto:support@marieforleo.com">support@marieforleo.com</a> and we'll help you out! More soon,
@@ -41,7 +41,7 @@ class Success extends React.Component {
   
   render () {
     return (
-      <LandingPage>
+      <LandingPage boxClass="box--sm-bottom-padding" contentClass="content--no-background-small">
         {this.renderHeadline()}
         {this.renderBox()}
       </LandingPage>

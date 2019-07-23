@@ -76,10 +76,11 @@ h1 {
 }
 h2 {
   font-family: $crimson;
-  font-size: 2em;
+  font-size: 2.4em;
   line-height: 1.5;
-  @include for-desktop-down {
-    font-size: 1.75em;
+  margin: .5em 0;
+  @include for-laptop-sm-down {
+    font-size: 2em;
   }
   @include for-tablet-down {
     font-size: 1.5em;
@@ -105,6 +106,13 @@ h3 {
 h4 {
   font-family: $crimson;
   font-style: italic;
+  font-size: 1.5em;
+  @include for-laptop-sm-down {
+    font-size: 1.25em;
+  }
+  @include for-tablet-down {
+    font-size: 1em;
+  }
 }
 h5 {
   font-family: $chocolates-bold;
@@ -112,6 +120,7 @@ h5 {
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 0px;
+  font-size: 1.1em;
 }
 h6 {
   font-family: $gotham-bold;
@@ -121,7 +130,7 @@ h6 {
 }
 p {
   font-family: $gotham-book;
-  line-height: 2;
+  line-height: 1.75;
   letter-spacing: .2px;
 }
 a {
@@ -168,6 +177,7 @@ a {
 }
 .flex {
   display: flex;
+  flex-wrap: wrap;
   &--space-between {
     align-items: center;
     justify-content: space-between;
@@ -212,13 +222,17 @@ a {
 // content elements //
 .headline {
   flex-basis: 0;
-  flex-grow: 6;
+  flex-grow: 1.25;
   padding: 50px 50px 50px 100px;
   display: flex;
   align-items: center;
   flex-direction: column;
   position: relative;
   justify-content: center;
+  @include for-laptop-sm-down {
+    padding: 10%;
+    flex-basis: auto;
+  }
   
   &__h1 {
     font-size: 8em;
@@ -227,22 +241,39 @@ a {
     @include for-laptop-down {
       font-size: 7em;
     }
+    &--small {
+      font-size: 6em;
+      letter-spacing: 10px;
+      @include for-laptop-sm-down {
+        font-size: 4em;
+      }
+      @include for-tablet-down {
+        font-size: 2.25em;
+        letter-spacing: 5px;
+      }
+    }
   }
 }
 
 .content {
   flex-basis: 0;
-  flex-grow: 4;
+  flex-grow: 1;
   background: url('../img/iPhoneAndCircles.png');
   background-size: 85%;
   background-repeat: no-repeat;
   background-position: top;
   display: flex;
+  margin-top: -3vw;
   @include for-laptop-sm-down {
     background-position: center 15%;
   }
   @include for-tablet-down {
     background-size: 100%;
+  }
+  &--no-background-small {
+    @include for-laptop-sm-down {
+      background: none;
+    }
   }
 }
 
@@ -269,12 +300,18 @@ a {
     background: transparent;
     padding: 15px 0px;
   }
+  &--sm-bottom-padding {
+    padding-bottom: 5%;
+  }
   &__p {
     @include for-desktop-down {
-      font-size: .95em;
+      font-size: 1.1em;
     }
     @include for-tablet-down {
       font-size: .75em;
+    }
+    &--small {
+      font-size: .85em;
     }
   }
 }
@@ -362,6 +399,19 @@ a {
   width: 100%;
   padding: 5px;
   margin: 10px 0px;
+  font-family: "gotham-book";
+  &::-webkit-input-placeholder {
+    color: transparentize($dark, .7);
+  }
+  &::-moz-placeholder {
+    color: transparentize($dark, .7);
+  }
+  &:-ms-input-placeholder {
+    color: transparentize($dark, .7);
+  }
+  &::placeholder {
+    color: transparentize($dark, .7);
+  }
 }
 .Dropdown {
   &-hidden {
@@ -370,13 +420,18 @@ a {
   &-control {
     border: 0px;
     border-bottom: solid 1px transparentize($dark, .5);
+    padding-left: 0px;
+  }
+  &-placeholder {
+    color: transparentize($dark, .7);
+    font-family: "gotham-book";
   }
 }
 
 
 // images //
 .signature {
-  max-width: 25%;
+  max-width: 30%;
 }
 .logo {
   max-width: 115px;

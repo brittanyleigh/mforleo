@@ -101,7 +101,7 @@ class OptIn extends React.Component {
   
   render () {
     return (
-			<LandingPage>
+			<LandingPage headlineClass="hidden--tablet">
 				{this.renderHeadline()}
 				{this.renderBox()}
 			</LandingPage>
