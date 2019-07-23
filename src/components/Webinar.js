@@ -1,7 +1,7 @@
 import React from 'react';
 
 const INITIAL_STATE: State = {
-	webinarHeight: undefined,
+  webinarHeight: undefined,
 }
 
 class Webinar extends React.Component {
