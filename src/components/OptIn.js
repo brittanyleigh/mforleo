@@ -40,7 +40,7 @@ class OptIn extends React.Component {
 			return (
 				<React.Fragment>
 					<h2>Register Now</h2>
-					<h5>To save your seat in the webinar</h5>
+					<h6>To save your seat in the webinar</h6>
 					<form>
 						<div>
 							<label htmlFor="time" className="hidden">Time:</label>
@@ -62,17 +62,19 @@ class OptIn extends React.Component {
 							button
 						</button>
 					</form>
+					<img className="callout callout--small" src={require("../img/FreeClass-ForTabletAndMobile.svg")} alt="free class"/>
 				</React.Fragment>
 			)
 		} else {
 			return (
 				<React.Fragment>
-					<h4>Register Now:</h4>
+					<h5>Register Now:</h5>
 					<h2>5 Writing Mistakes That Are <span className="highlight">Killing Your Sales</span></h2>
 					<p className="box__p">Get the 5 easy fixes that take you from "crickets" to clamoring fans and buyers.</p>
 					<button className="btn btn--primary" onClick={this.handleShowForm}>
 						Yes!! Save my seat!
 					</button>
+					<img className="callout callout--small" src={require("../img/FreeClass-ForTabletAndMobile.svg")} alt="free class"/>
 				</React.Fragment>
 			)
 		}
@@ -82,6 +84,7 @@ class OptIn extends React.Component {
 		return (
 			<React.Fragment>
 				<h1 className="headline__h1">Oh hey future writing genius</h1>
+				<img className="callout callout--large" src={require("../img/FreeClass-ForDesktop.svg")} alt="free class"/>
 			</React.Fragment>
 		)
 	}

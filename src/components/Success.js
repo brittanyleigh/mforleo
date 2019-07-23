@@ -18,7 +18,7 @@ class Success extends React.Component {
     return (
       <React.Fragment>
         <h1 className="contrast_color headline__h1">"{name} always finds the best stuff."</h1>
-        <h3 className="full-width">- Your friends, after you share this free class</h3>
+        <h4 className="full-width">- Your friends, after you share this free class</h4>
       </React.Fragment>
     )
   }
@@ -27,7 +27,7 @@ class Success extends React.Component {
     return (
       <React.Fragment>
         <h2>You're In!</h2>
-        <h5>Get ready to swim in a pile of money, because that's what happens when you get your copy ish in order.</h5>
+        <h6>Get ready to swim in a pile of money, because that's what happens when you get your copy ish in order.</h6>
         <hr />
         <p>
           Check your email inbox now for a special message about your upcoming class.

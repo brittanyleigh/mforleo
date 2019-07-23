@@ -37,6 +37,7 @@ h1 {
   font-family: "Chocolates-Bold", Arial, sans-serif;
   color: #f9e618;
   letter-spacing: 6px;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -46,27 +47,29 @@ h2 {
 }
 
 h3 {
+  font-family: "Chocolates-Bold", Arial, sans-serif;
+  font-size: 2.5em;
+  letter-spacing: 1.5px;
+  z-index: 1;
+}
+
+h4 {
   font-family: "Crimson Text", serif;
   font-style: italic;
 }
 
-h4 {
+h5 {
   font-family: "Chocolates-Bold", Arial, sans-serif;
   color: #f9e618;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-h5 {
+h6 {
   font-family: "Gotham-Bold", Arial, sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;
   line-height: 2;
-}
-
-h6 {
-  font-family: "Crimson Text", serif;
-  font-style: italic;
 }
 
 p {
@@ -102,6 +105,15 @@ a:hover {
   width: 100%;
 }
 
+.constrained_width {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.relative {
+  position: relative;
+}
+
 .container {
   border: solid 1.5vw #ffffff;
   min-height: 100vh;
@@ -123,7 +135,17 @@ a:hover {
   background: #fff0ef;
 }
 .container__split_blush {
-  background: #fff0ef;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+30,fff0ef+30,fff0ef+100 */
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 30%, #fff0ef 30%, #fff0ef 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 30%, #fff0ef 30%, #fff0ef 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 30%, #fff0ef 30%, #fff0ef 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$white", endColorstr="$blush",GradientType=0 );
+  /* IE6-9 */
 }
 
 .headline {
@@ -133,10 +155,48 @@ a:hover {
   display: flex;
   align-items: center;
   flex-direction: column;
+  position: relative;
+}
+@media screen and (max-width: 640px) {
+  .headline {
+    display: none;
+  }
 }
 .headline__h1 {
   font-size: 8em;
   margin: 0px;
+}
+
+.callout {
+  position: absolute;
+  max-width: 250px;
+}
+.callout--large {
+  right: -50px;
+  bottom: 15%;
+}
+@media screen and (max-width: 640px) {
+  .callout--large {
+    display: none;
+  }
+}
+.callout--small {
+  top: 25px;
+  left: 25px;
+}
+@media screen and (min-width: 640px) {
+  .callout--small {
+    display: none;
+  }
+}
+.callout--chat {
+  width: 100px;
+  left: -20px;
+  bottom: 10px;
+}
+.callout--circles {
+  z-index: 0;
+  right: 150px;
 }
 
 .content {
@@ -146,15 +206,32 @@ a:hover {
   background-size: 85%;
   background-repeat: no-repeat;
   background-position: top;
-  max-width: 60%;
   display: flex;
 }
 
 .box {
   background: #ffffff;
   margin-top: auto;
+  padding: 15px;
+}
+.box--landing {
   padding: 15%;
-  width: 100%;
+}
+@media screen and (max-width: 640px) {
+  .box--landing {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .box--landing {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.box--transparent {
+  background: transparent;
+  padding: 15px 0px;
 }
 
 .btn {
@@ -184,6 +261,41 @@ a:hover {
 
 .signature_image {
   max-width: 25%;
+}
+
+.iframe {
+  width: 100%;
+}
+
+.accent {
+  min-width: 65px;
+  margin-right: 25px;
+  padding: 20px 0px;
+  position: relative;
+}
+@media screen and (max-width: 640px) {
+  .accent {
+    display: none;
+  }
+}
+.accent__h6 {
+  transform: rotate(-180deg);
+  writing-mode: vertical-rl;
+}
+
+.flex-container {
+  display: flex;
+}
+.flex-container--space-between {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  max-width: 100px;
+  border-right: solid 1px rgba(30, 30, 30, 0.5);
+  padding-right: 50px;
+  box-sizing: content-box;
 }
 
 /*# sourceMappingURL=style.css.map */

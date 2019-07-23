@@ -4,18 +4,18 @@ class LandingPage extends React.Component {
   
   render () {
     return (
-			<main role="main">
-        <div className="container container__flex container__blush">
+      <div className="container container__blush">
+  			<main role="main" className="flex-container">
           <div className="headline">
   				   {this.props.children[0]}
           </div>
 					<div className="content">
-						<div className="box">
+						<div className="box box--landing full-width">
               {this.props.children[1]}
 						</div>
 					</div>
+    		</main>
       </div>
-		</main>
     )
   }
 }
