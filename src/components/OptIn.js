@@ -39,7 +39,7 @@ class OptIn extends React.Component {
 		if (showForm) {
 			return (
 				<React.Fragment>
-					<h3>Register Now</h3>
+					<h2>Register Now</h2>
 					<h5>To save your seat in the webinar</h5>
 					<form>
 						<div>
@@ -52,13 +52,13 @@ class OptIn extends React.Component {
 						</div>
 						<div>
 							<label htmlFor="name" className="hidden">Name:</label>
-							<input type="text" id="name" name="user_name" placeholder="First Name" onChange={this.handleNameChanged}/>
+							<input type="text" id="name" name="user_name" placeholder="First Name" className="text_input" onChange={this.handleNameChanged}/>
 						</div>
 						<div>
 							<label htmlFor="mail" className="hidden">E-mail:</label>
-							<input type="email" id="mail" name="user_mail" placeholder="Email Address"/>
+							<input type="email" id="mail" name="user_mail" className="text_input" placeholder="Email Address"/>
 						</div>
-						<button onClick={this.handleRegistrationSuccess}>
+						<button className="btn btn--primary" onClick={this.handleRegistrationSuccess}>
 							button
 						</button>
 					</form>
@@ -69,8 +69,8 @@ class OptIn extends React.Component {
 				<React.Fragment>
 					<h4>Register Now:</h4>
 					<h2>5 Writing Mistakes That Are <span className="highlight">Killing Your Sales</span></h2>
-					<p>Get the 5 easy fixes that take you from "crickets" to clamoring fans and buyers.</p>
-					<button onClick={this.handleShowForm}>
+					<p className="box__p">Get the 5 easy fixes that take you from "crickets" to clamoring fans and buyers.</p>
+					<button className="btn btn--primary" onClick={this.handleShowForm}>
 						Yes!! Save my seat!
 					</button>
 				</React.Fragment>
@@ -80,9 +80,9 @@ class OptIn extends React.Component {
 	
 	renderHeadline = () => {
 		return (
-			<div className="headline uppercase">
-				<h1 className="contrast_color">Oh hey future writing genius</h1>
-			</div>
+			<React.Fragment>
+				<h1 className="headline__h1">Oh hey future writing genius</h1>
+			</React.Fragment>
 		)
 	}
   

@@ -15,6 +15,10 @@
   font-family: "chocolates-bold";
   src: url("../fonts/Chocolates-Bold.otf");
 }
+body {
+  cursor: url("../img/RedPenCursor.png"), auto;
+}
+
 .hidden {
   position: absolute;
   left: -10000px;
@@ -29,16 +33,35 @@
   color: #111111;
 }
 
-h1, h4 {
+h1 {
   font-family: "Chocolates-Bold", Arial, sans-serif;
+  color: #f9e618;
+  letter-spacing: 6px;
 }
 
-h2, h3 {
+h2 {
   font-family: "Crimson Text", serif;
+  font-size: 2em;
+  line-height: 1.5;
+}
+
+h3 {
+  font-family: "Crimson Text", serif;
+  font-style: italic;
+}
+
+h4 {
+  font-family: "Chocolates-Bold", Arial, sans-serif;
+  color: #f9e618;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 h5 {
   font-family: "Gotham-Bold", Arial, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 2;
 }
 
 h6 {
@@ -48,15 +71,50 @@ h6 {
 
 p {
   font-family: "Gotham-Book", Arial, sans-serif;
+  line-height: 2;
+  letter-spacing: 0.2px;
+}
+
+a {
+  color: #e7325b;
+}
+a:hover {
+  cursor: pointer;
 }
 
 .uppercase {
   text-transform: uppercase;
 }
 
+.centered {
+  text-align: center;
+}
+
+.contrast_color {
+  color: #f9e618;
+}
+
+.highlight {
+  background-color: #f9e618;
+}
+
+.full-width {
+  width: 100%;
+}
+
 .container {
-  border: solid 50px #ffffff;
+  border: solid 1.5vw #ffffff;
   min-height: 100vh;
+}
+@media screen and (max-width: 640px) {
+  .container {
+    border-width: 3vw;
+  }
+}
+@media screen and (max-width: 320px) {
+  .container {
+    border-width: 0;
+  }
 }
 .container__flex {
   display: flex;
@@ -68,12 +126,64 @@ p {
   background: #fff0ef;
 }
 
-.contrast_color {
-  color: #f9e618;
+.headline {
+  flex-basis: 0;
+  flex-grow: 6;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.headline__h1 {
+  font-size: 8em;
+  margin: 0px;
 }
 
-.highlight {
-  background-color: #f9e618;
+.content {
+  flex-basis: 0;
+  flex-grow: 4;
+  background: url("../img/iPhoneAndCircles.png");
+  background-size: 85%;
+  background-repeat: no-repeat;
+  background-position: top;
+  max-width: 60%;
+  display: flex;
+}
+
+.box {
+  background: #ffffff;
+  margin-top: auto;
+  padding: 15%;
+  width: 100%;
+}
+
+.btn {
+  font-family: "Chocolates-Bold", Arial, sans-serif;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.btn:hover {
+  cursor: pointer;
+}
+.btn--primary {
+  background: #1e1e1e;
+  color: #ffffff;
+}
+.btn--primary:hover {
+  background: #050505;
+}
+
+.text_input {
+  border: 0px;
+  border-bottom: solid 1px rgba(30, 30, 30, 0.5);
+  width: 100%;
+  padding: 5px;
+  margin: 10px 0px;
+}
+
+.signature_image {
+  max-width: 25%;
 }
 
 /*# sourceMappingURL=style.css.map */

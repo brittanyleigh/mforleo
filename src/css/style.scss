@@ -9,6 +9,7 @@ $desktop: 1920px;
 $blush: #fff0ef; 
 $white: #ffffff;
 $contrast: #f9e618;
+$secondary_contrast: #e7325b;
 $dark: #1e1e1e;
 $default-text: #111111;
 
@@ -41,6 +42,11 @@ $gotham-medium: 'Gotham-Medium', Arial, sans-serif;
 $chocolates-bold: 'Chocolates-Bold', Arial, sans-serif;
 $crimson: 'Crimson Text', serif;
 
+body {
+  cursor: url('../img/RedPenCursor.png'), auto;
+  //cursor: pointer;
+}
+
 .hidden {
   position:absolute;
   left:-10000px;
@@ -54,16 +60,31 @@ $crimson: 'Crimson Text', serif;
   color: $default-text;
 }
 
-h1, h4 {
+h1 {
   font-family: $chocolates-bold;
+  color: $contrast;
+  letter-spacing: 6px;
 }
-
-h2, h3 {
+h2 {
   font-family: $crimson;
+  font-size: 2em;
+  line-height: 1.5;
 }
-
+h3 {
+  font-family: $crimson;
+  font-style: italic;
+}
+h4 {
+  font-family: $chocolates-bold;
+  color: $contrast;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 h5 {
   font-family: $gotham-bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 2;
 }
 h6 {
   font-family: $crimson;
@@ -71,14 +92,44 @@ h6 {
 }
 p {
   font-family: $gotham-book;
+  line-height: 2;
+  letter-spacing: .2px;
 }
+a {
+  color: $secondary_contrast;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// modifiers //
 .uppercase {
   text-transform: uppercase;
 }
+.centered {
+  text-align: center;
+}
+.contrast_color {
+  color: $contrast;
+}
+.highlight {
+  background-color: $contrast;
+}
+.full-width {
+  width: 100%;
+}
 
 .container {
-  border: solid 50px $white;
+  border: solid 1.5vw $white;
   min-height: 100vh;
+
+  @media screen and (max-width: $tablet) {
+    border-width: 3vw;
+  }
+  
+  @media screen and (max-width: $mobile) {
+    border-width: 0;
+  }
   
   &__flex {
     display: flex;
@@ -91,9 +142,62 @@ p {
   }
 }
 
-.contrast_color {
-  color: $contrast;
+.headline {
+  flex-basis: 0;
+  flex-grow: 6;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+  &__h1 {
+    font-size: 8em;
+    margin: 0px;
+  }
 }
-.highlight {
-  background-color: $contrast;
+.content {
+  flex-basis: 0;
+  flex-grow: 4;
+  background: url('../img/iPhoneAndCircles.png');
+  background-size: 85%;
+  background-repeat: no-repeat;
+  background-position: top;
+  max-width: 60%;
+  display: flex;
+}
+.box {
+  background: $white;
+  margin-top: auto;
+  padding: 15%;
+  width: 100%;
+}
+
+.btn {
+  font-family: $chocolates-bold;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  &:hover {
+    cursor: pointer;
+  }
+  
+  &--primary {
+    background: $dark;
+    color: $white;
+    &:hover {
+      background: darken($dark, 10%);
+    }
+  }
+}
+
+.text_input {
+  border: 0px;
+  border-bottom: solid 1px transparentize($dark, .5);
+  width: 100%;
+  padding: 5px;
+  margin: 10px 0px;
+}
+
+.signature_image {
+  max-width: 25%;
 }
