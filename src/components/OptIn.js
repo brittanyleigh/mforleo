@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { RegistrationSuccess } from '../actions';
 import LandingPage from './LandingPage';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
 const INITIAL_STATE: State = {
 	name: undefined,
@@ -16,8 +18,8 @@ class OptIn extends React.Component {
     this.setState({ 'name': e.target.value })
   }
   
-  handleTimeChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ 'time': e.target.value })
+  handleTimeChanged = (selectedOption) => {
+    this.setState({ 'time': selectedOption.value })
   }
   
   handleRegistrationSuccess = () => {
@@ -33,6 +35,18 @@ class OptIn extends React.Component {
     this.setState({ showForm: true })
   }
 	
+	renderDropdown = () => {
+		const options = [
+			{ value: '0', label: 'Select the day/time that works best for you', className: 'Dropdown-hidden' },
+			{ value: '1', label: 'Wednesday, October 10 1 pm EST' },
+			{ value: '6', label: 'Wednesday, October 10 6 pm EST' },
+		]
+		const defaultOption = options[0];
+		return (
+			<Dropdown options={options} onChange={this.handleTimeChanged} value={defaultOption}/>
+		)
+	}
+	
 	renderBox = () => {
 		const { showForm } = this.state;
 		
@@ -44,11 +58,14 @@ class OptIn extends React.Component {
 					<form>
 						<div>
 							<label htmlFor="time" className="hidden">Time:</label>
+							{this.renderDropdown()}
+							{/*
 							<select defaultValue={'DEFAULT'} name="time" onChange={this.handleTimeChanged}>
 								<option value="DEFAULT" disabled>Select the day/time that works best for you</option>
 								<option value="1">Wednesday, October 10 1 pm EST</option>
 								<option value="6">Wednesday, October 10 6 pm EST</option>
 							</select>
+							*/}
 						</div>
 						<div>
 							<label htmlFor="name" className="hidden">Name:</label>

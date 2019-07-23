@@ -292,6 +292,15 @@ a {
   padding: 5px;
   margin: 10px 0px;
 }
+.Dropdown {
+  &-hidden {
+    display: none;
+  }
+  &-control {
+    border: 0px;
+    border-bottom: solid 1px transparentize($dark, .5);
+  }
+}
 
 
 // images //

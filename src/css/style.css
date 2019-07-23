@@ -280,6 +280,14 @@ a:hover {
   margin: 10px 0px;
 }
 
+.Dropdown-hidden {
+  display: none;
+}
+.Dropdown-control {
+  border: 0px;
+  border-bottom: solid 1px rgba(30, 30, 30, 0.5);
+}
+
 .signature {
   max-width: 25%;
 }

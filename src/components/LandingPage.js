@@ -4,8 +4,7 @@ class LandingPage extends React.Component {
   
   render () {
     return (
-      <div className="container container__blush">
-  			<main role="main" className="flex">
+  			<main role="main" className="container container__blush flex">
           <div className="headline">
   				   {this.props.children[0]}
           </div>
@@ -15,7 +14,6 @@ class LandingPage extends React.Component {
 						</div>
 					</div>
     		</main>
-      </div>
     )
   }
 }
