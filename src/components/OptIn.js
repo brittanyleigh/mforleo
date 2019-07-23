@@ -62,7 +62,7 @@ class OptIn extends React.Component {
 							button
 						</button>
 					</form>
-					<img className="callout callout--small" src={require("../img/FreeClass-ForTabletAndMobile.svg")} alt="free class"/>
+					<img className="callout callout--class-small" src={require("../img/FreeClass-ForTabletAndMobile.svg")} alt="free class"/>
 				</React.Fragment>
 			)
 		} else {
@@ -74,7 +74,7 @@ class OptIn extends React.Component {
 					<button className="btn btn--primary" onClick={this.handleShowForm}>
 						Yes!! Save my seat!
 					</button>
-					<img className="callout callout--small" src={require("../img/FreeClass-ForTabletAndMobile.svg")} alt="free class"/>
+					<img className="callout callout--class-small" src={require("../img/FreeClass-ForTabletAndMobile.svg")} alt="free class"/>
 				</React.Fragment>
 			)
 		}
@@ -84,7 +84,7 @@ class OptIn extends React.Component {
 		return (
 			<React.Fragment>
 				<h1 className="headline__h1">Oh hey future writing genius</h1>
-				<img className="callout callout--large" src={require("../img/FreeClass-ForDesktop.svg")} alt="free class"/>
+				<img className="callout callout--class-large" src={require("../img/FreeClass-ForDesktop.svg")} alt="free class"/>
 			</React.Fragment>
 		)
 	}

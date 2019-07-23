@@ -19,15 +19,6 @@ body {
   cursor: url("../img/RedPenCursor.png"), auto;
 }
 
-.hidden {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
 * {
   box-sizing: border-box;
   color: #111111;
@@ -114,6 +105,23 @@ a:hover {
   position: relative;
 }
 
+.hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+}
+.flex--space-between {
+  align-items: center;
+  justify-content: space-between;
+}
+
 .container {
   border: solid 1.5vw #ffffff;
   min-height: 100vh;
@@ -128,15 +136,12 @@ a:hover {
     border-width: 0;
   }
 }
-.container__flex {
-  display: flex;
-}
 .container__blush {
   background: #fff0ef;
 }
 .container__split_blush {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+30,fff0ef+30,fff0ef+100 */
-  background: #ffffff;
+  background: #fff0ef;
   /* Old browsers */
   background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 30%, #fff0ef 30%, #fff0ef 100%);
   /* FF3.6-15 */
@@ -165,38 +170,6 @@ a:hover {
 .headline__h1 {
   font-size: 8em;
   margin: 0px;
-}
-
-.callout {
-  position: absolute;
-  max-width: 250px;
-}
-.callout--large {
-  right: -50px;
-  bottom: 15%;
-}
-@media screen and (max-width: 640px) {
-  .callout--large {
-    display: none;
-  }
-}
-.callout--small {
-  top: 25px;
-  left: 25px;
-}
-@media screen and (min-width: 640px) {
-  .callout--small {
-    display: none;
-  }
-}
-.callout--chat {
-  width: 100px;
-  left: -20px;
-  bottom: 10px;
-}
-.callout--circles {
-  z-index: 0;
-  right: 150px;
 }
 
 .content {
@@ -234,6 +207,54 @@ a:hover {
   padding: 15px 0px;
 }
 
+.callout {
+  position: absolute;
+  max-width: 250px;
+}
+.callout--class-large {
+  right: -50px;
+  bottom: 15%;
+}
+@media screen and (max-width: 640px) {
+  .callout--class-large {
+    display: none;
+  }
+}
+.callout--class-small {
+  top: 25px;
+  left: 25px;
+}
+@media screen and (min-width: 640px) {
+  .callout--class-small {
+    display: none;
+  }
+}
+.callout--chat {
+  width: 100px;
+  left: -20px;
+  bottom: 10px;
+}
+.callout--circles {
+  z-index: 0;
+  right: 150px;
+}
+
+.accent {
+  min-width: 65px;
+  margin-right: 25px;
+  padding: 20px 0px;
+  position: relative;
+}
+@media screen and (max-width: 640px) {
+  .accent {
+    display: none;
+  }
+}
+.accent__h6 {
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
+}
+
 .btn {
   font-family: "Chocolates-Bold", Arial, sans-serif;
   padding: 10px 15px;
@@ -259,36 +280,8 @@ a:hover {
   margin: 10px 0px;
 }
 
-.signature_image {
+.signature {
   max-width: 25%;
-}
-
-.iframe {
-  width: 100%;
-}
-
-.accent {
-  min-width: 65px;
-  margin-right: 25px;
-  padding: 20px 0px;
-  position: relative;
-}
-@media screen and (max-width: 640px) {
-  .accent {
-    display: none;
-  }
-}
-.accent__h6 {
-  transform: rotate(-180deg);
-  writing-mode: vertical-rl;
-}
-
-.flex-container {
-  display: flex;
-}
-.flex-container--space-between {
-  align-items: center;
-  justify-content: space-between;
 }
 
 .logo {

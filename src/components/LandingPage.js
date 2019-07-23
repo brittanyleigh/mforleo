@@ -5,7 +5,7 @@ class LandingPage extends React.Component {
   render () {
     return (
       <div className="container container__blush">
-  			<main role="main" className="flex-container">
+  			<main role="main" className="flex">
           <div className="headline">
   				   {this.props.children[0]}
           </div>

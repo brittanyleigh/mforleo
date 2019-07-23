@@ -34,7 +34,7 @@ class Success extends React.Component {
           Can't find it after a few minutes?
           Write <a href="mailto:support@marieforleo.com">support@marieforleo.com</a> and we'll help you out! More soon,
         </p>
-        <img className="signature_image" src={require("../img/XOXOMarie.svg")} alt="xoxo marie signature"/>
+        <img className="signature" src={require("../img/XOXOMarie.svg")} alt="xoxo marie signature"/>
       </React.Fragment>
     )
   }
