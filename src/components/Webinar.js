@@ -24,7 +24,7 @@ class Webinar extends React.Component {
       <div className="container container__split_blush">
         <main role="main">
           <div className="box constrained_width box--transparent flex flex--space-between">
-            <img className="logo" src={require('../img/CopyCureLogo-black-transpBG.png')} alt="copy cure logo" />
+            <img className="logo hidden--tablet" src={require('../img/CopyCureLogo-black-transpBG.png')} alt="copy cure logo" />
             <h3>5 Writing Mistakes That Are Killing Your Sales</h3>
             <img className="callout callout--circles" src={require('../img/circles.png')} alt="circles" />
           </div>
@@ -39,10 +39,13 @@ class Webinar extends React.Component {
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                 allowFullScreen>
               </iframe>
+              <div className="highlight centered cta">
+                <button className="btn btn--primary cta__btn">Click Here To Get Started</button>
+              </div>
             </div>
           </div>
           <div className="constrained_width flex box box--transparent">
-            <div className="highlight accent accent--chat">
+            <div className="highlight accent accent--chat hidden--tablet">
               <h6 className="accent__h6">Join the Convo!</h6>
               <img className="callout callout--chat" src={require('../img/LetsChat.svg')} alt="let's chat" />
             </div>
@@ -59,8 +62,8 @@ class Webinar extends React.Component {
             </iframe>
           </div>
         </main>
-        <footer className="constrained_width box box--transparent centered">
-          <div className="footer__links">
+        <footer className="footer constrained_width box box--transparent centered">
+          <div className="footer__links uppercase">
             © marie forleo international  |  terms  |  privacy policy  |  contact
           </div>
           <div className="footer__policies">

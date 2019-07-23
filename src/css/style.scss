@@ -67,9 +67,19 @@ h2 {
 }
 h3 {
   font-family: $chocolates-bold;
-  font-size: 2.5em;
+  font-size: 2.25em;
   letter-spacing: 1.5px;
   z-index: 1;
+  margin: 0px;
+  text-align: right;
+  line-height: 1.25;
+  
+  @media screen and (max-width: $laptop) {
+    font-size: 2em;
+  }
+  @media screen and (max-width: $tablet) {
+    text-align: center;
+  }
 }
 h4 {
   font-family: $crimson;
@@ -117,14 +127,16 @@ a {
   width: 100%;
 }
 .constrained_width {
-  max-width: 75%;
+  max-width: 65%;
   margin: 0 auto;
+  @media screen and (max-width: $tablet){
+    max-width: 90%;
+  }
 }
 .relative {
   position: relative;
 }
-.hidden {
-  // hides items but keeps them available for screen readers
+.screen-reader-only {
   position:absolute;
   left:-10000px;
   top:auto;
@@ -157,13 +169,24 @@ a {
   &__blush {
     background: $blush;
   }
+  $background-split-large: 25%;
+  $background-split-small: 20%;
   &__split_blush {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+30,fff0ef+30,fff0ef+100 */
     background: $blush; /* Old browsers */
-    background: -moz-linear-gradient(top,  $white 0%, $white 30%, $blush 30%, $blush 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  $white 0%,$white 30%,$blush 30%,$blush 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  $white 0%,$white 30%,$blush 30%,$blush 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -moz-linear-gradient(top,  $white 0%, $white $background-split-large, $blush $background-split-large, $blush 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  $white 0%,$white $background-split-large,$blush $background-split-large,$blush 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  $white 0%,$white $background-split-large,$blush $background-split-large,$blush 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$blush',GradientType=0 ); /* IE6-9 */
+    
+    @media screen and (max-width: $tablet) {
+      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+30,fff0ef+30,fff0ef+100 */
+      background: $blush; /* Old browsers */
+      background: -moz-linear-gradient(top,  $white 0%, $white $background-split-small, $blush $background-split-small, $blush 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top,  $white 0%,$white $background-split-small,$blush $background-split-small,$blush 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom,  $white 0%,$white $background-split-small,$blush $background-split-small,$blush 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$blush',GradientType=0 ); /* IE6-9 */
+    }
   }
 }
 
@@ -177,10 +200,6 @@ a {
   align-items: center;
   flex-direction: column;
   position: relative;
-  
-  @media screen and (max-width: $tablet) {
-    display: none;
-  }
   
   &__h1 {
     font-size: 8em;
@@ -229,9 +248,6 @@ a {
   &--class-large {
     right: -50px;
     bottom: 15%;
-    @media screen and (max-width: $tablet) {
-      display: none;
-    }
   }
   &--class-small {
     top: 25px;
@@ -247,7 +263,12 @@ a {
   }
   &--circles {
     z-index: 0;
-    right: 150px;
+    right: 15%;
+    max-width: 15%;
+    @media screen and (max-width: $tablet) {
+      max-width: 25%;
+      top: -5%;
+    }
   }
 }
 
@@ -256,13 +277,18 @@ a {
   margin-right: 25px;
   padding: 20px 0px;
   position: relative;
-  
-  @media screen and (max-width: $tablet) {
-    display: none;
-  }
   &__h6 {
     transform: rotate(180deg);
   	writing-mode: vertical-rl;
+  }
+}
+
+.cta {
+  padding: 15px;
+  margin-top: 15px;
+  &__btn {
+    letter-spacing: 3px;
+    min-width: 50%;
   }
 }
 
@@ -273,6 +299,8 @@ a {
   padding: 10px 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  border: 0px;
+  
   &:hover {
     cursor: pointer;
   }
@@ -308,8 +336,38 @@ a {
   max-width: 25%;
 }
 .logo {
-  max-width: 100px;
+  max-width: 115px;
   border-right: solid 1px transparentize($dark, .5);
-  padding-right: 50px;
+  padding-right: 5%;
+  margin-right: 15px;
   box-sizing: content-box;
+}
+
+
+// footer //
+.footer {
+  margin: 50px auto;
+  
+  &__links {
+    font-family: $gotham-bold;
+    letter-spacing: 2px;
+    font-size: .5em;
+    line-height: 2;
+  }
+  &__policies {
+    font-size: .7em;
+    max-width: 75%;
+    margin: 0 auto;
+  }
+}
+
+
+// breakpoint modifications //
+.hidden {
+  display: none;
+  &--tablet {
+    @media screen and (max-width: $tablet) {
+      display: none;
+    }
+  }
 }

@@ -57,22 +57,15 @@ class OptIn extends React.Component {
 					<h6>To save your seat in the webinar</h6>
 					<form>
 						<div>
-							<label htmlFor="time" className="hidden">Time:</label>
+							<label htmlFor="time" className="screen-reader-only">Time:</label>
 							{this.renderDropdown()}
-							{/*
-							<select defaultValue={'DEFAULT'} name="time" onChange={this.handleTimeChanged}>
-								<option value="DEFAULT" disabled>Select the day/time that works best for you</option>
-								<option value="1">Wednesday, October 10 1 pm EST</option>
-								<option value="6">Wednesday, October 10 6 pm EST</option>
-							</select>
-							*/}
 						</div>
 						<div>
-							<label htmlFor="name" className="hidden">Name:</label>
+							<label htmlFor="name" className="screen-reader-only">Name:</label>
 							<input type="text" id="name" name="user_name" placeholder="First Name" className="text_input" onChange={this.handleNameChanged}/>
 						</div>
 						<div>
-							<label htmlFor="mail" className="hidden">E-mail:</label>
+							<label htmlFor="mail" className="screen-reader-only">E-mail:</label>
 							<input type="email" id="mail" name="user_mail" className="text_input" placeholder="Email Address"/>
 						</div>
 						<button className="btn btn--primary" onClick={this.handleRegistrationSuccess}>
@@ -101,7 +94,7 @@ class OptIn extends React.Component {
 		return (
 			<React.Fragment>
 				<h1 className="headline__h1">Oh hey future writing genius</h1>
-				<img className="callout callout--class-large" src={require("../img/FreeClass-ForDesktop.svg")} alt="free class"/>
+				<img className="callout callout--class-large hidden--tablet" src={require("../img/FreeClass-ForDesktop.svg")} alt="free class"/>
 			</React.Fragment>
 		)
 	}
