@@ -41,6 +41,11 @@ h2 {
     font-size: 1.75em;
   }
 }
+@media (max-width: 639px) {
+  h2 {
+    font-size: 1.5em;
+  }
+}
 
 h3 {
   font-family: "Chocolates-Bold", Arial, sans-serif;
@@ -151,7 +156,7 @@ a:hover {
   border: solid 1.5vw #ffffff;
   min-height: 100vh;
 }
-@media (max-width: 1199px) {
+@media (max-width: 639px) {
   .container {
     border-width: 0px;
   }
@@ -218,6 +223,16 @@ a:hover {
   background-position: top;
   display: flex;
 }
+@media (max-width: 1199px) {
+  .content {
+    background-position: center 15%;
+  }
+}
+@media (max-width: 639px) {
+  .content {
+    background-size: 100%;
+  }
+}
 
 .box {
   background: #ffffff;
@@ -229,8 +244,17 @@ a:hover {
 }
 @media (max-width: 1199px) {
   .box--landing {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 639px) {
+  .box--landing {
     margin-left: 0;
     margin-right: 0;
+    max-width: 100%;
+    padding: 10%;
   }
 }
 .box--transparent {
@@ -240,6 +264,11 @@ a:hover {
 @media (max-width: 1919px) {
   .box__p {
     font-size: 0.95em;
+  }
+}
+@media (max-width: 639px) {
+  .box__p {
+    font-size: 0.75em;
   }
 }
 
@@ -258,6 +287,11 @@ a:hover {
 @media screen and (min-width: 1200px) {
   .callout--class-small {
     display: none;
+  }
+}
+@media (max-width: 639px) {
+  .callout--class-small {
+    max-width: 150px;
   }
 }
 .callout--chat {

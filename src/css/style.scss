@@ -6,32 +6,18 @@ $laptop: 1440px;
 $desktop: 1920px;
 
 @mixin for-tablet-down {
-  @media (max-width: 1199px) { @content; }
+  @media (max-width: 639px) { @content; }
 }
 @mixin for-laptop-sm-down {
-  @media (max-width: 1439px) { @content; }
+  @media (max-width: 1199px) { @content; }
 }
 @mixin for-laptop-down {
+  @media (max-width: 1439px) { @content; }
+}
+@mixin for-desktop-down {
   @media (max-width: 1919px) { @content; }
 }
 
-
-
-@mixin for-phone-only {
-  @media (max-width: 639px) { @content; }
-}
-@mixin for-tablet-up {
-  @media (min-width: 640px) { @content; }
-}
-@mixin for-laptop-small-up {
-  @media (min-width: 1200px) { @content; }
-}
-@mixin for-laptop-up {
-  @media (min-width: 1440px) { @content; }
-}
-@mixin for-desktop-up {
-  @media (min-width: 1920px) { @content; }
-}
 
 // Colors
 $blush: #fff0ef; 
@@ -92,8 +78,11 @@ h2 {
   font-family: $crimson;
   font-size: 2em;
   line-height: 1.5;
-  @include for-laptop-down {
+  @include for-desktop-down {
     font-size: 1.75em;
+  }
+  @include for-tablet-down {
+    font-size: 1.5em;
   }
 }
 h3 {
@@ -105,10 +94,10 @@ h3 {
   text-align: right;
   line-height: 1.25;
   
-  @include for-laptop-down {
+  @include for-desktop-down {
     font-size: 2.25em;
   }
-  @include for-tablet-down {
+  @include for-laptop-sm-down {
     font-size: 2em;
     text-align: center;
   }
@@ -162,7 +151,7 @@ a {
 .constrained_width {
   max-width: 65%;
   margin: 0 auto;
-  @include for-tablet-down {
+  @include for-laptop-sm-down {
     max-width: 90%;
   }
 }
@@ -208,7 +197,7 @@ a {
     background: linear-gradient(to bottom,  $white 0%,$white $background-split-large,$blush $background-split-large,$blush 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$blush',GradientType=0 ); /* IE6-9 */
     
-    @include for-tablet-down {
+    @include for-laptop-sm-down {
       /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+30,fff0ef+30,fff0ef+100 */
       background: $blush; /* Old browsers */
       background: -moz-linear-gradient(top,  $white 0%, $white $background-split-small, $blush $background-split-small, $blush 100%); /* FF3.6-15 */
@@ -235,7 +224,7 @@ a {
     font-size: 8em;
     margin: 0px;
     letter-spacing: 20px;
-    @include for-laptop-sm-down {
+    @include for-laptop-down {
       font-size: 7em;
     }
   }
@@ -249,6 +238,12 @@ a {
   background-repeat: no-repeat;
   background-position: top;
   display: flex;
+  @include for-laptop-sm-down {
+    background-position: center 15%;
+  }
+  @include for-tablet-down {
+    background-size: 100%;
+  }
 }
 
 .box {
@@ -258,9 +253,16 @@ a {
   
   &--landing {
     padding: 10% 15%;
+    @include for-laptop-sm-down {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
     @include for-tablet-down {
       margin-left: 0;
       margin-right: 0;
+      max-width: 100%;
+      padding: 10%;
     }
   }
   &--transparent {
@@ -268,8 +270,11 @@ a {
     padding: 15px 0px;
   }
   &__p {
-    @include for-laptop-down {
+    @include for-desktop-down {
       font-size: .95em;
+    }
+    @include for-tablet-down {
+      font-size: .75em;
     }
   }
 }
@@ -290,6 +295,9 @@ a {
     @media screen and (min-width: $laptop-sm) {
       display: none;
     }
+    @include for-tablet-down {
+      max-width: 150px;
+    }
   }
   &--chat {
     width: 100px;
@@ -300,7 +308,7 @@ a {
     z-index: 0;
     right: 15%;
     max-width: 15%;
-    @include for-tablet-down {
+    @include for-laptop-sm-down {
       max-width: 25%;
       top: -5%;
     }
@@ -401,7 +409,7 @@ a {
 .hidden {
   display: none;
   &--tablet {
-    @include for-tablet-down {
+    @include for-laptop-sm-down {
       display: none;
     }
   }
