@@ -49,7 +49,7 @@ class Success extends React.Component {
   
   render () {
     return (
-      <LandingPage boxClass="box--sm-bottom-padding" contentClass="content--no-background-small">
+      <LandingPage boxClass="box--sm-bottom-padding" contentClass="content__background--hidden-small">
         {this.renderHeadline()}
         {this.renderBox()}
       </LandingPage>

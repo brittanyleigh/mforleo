@@ -7,7 +7,7 @@ import 'react-dropdown/style.css';
 
 const INITIAL_STATE: State = {
 	name: undefined,
-	time: '1',
+	time: '0',
   showForm: false
 }
 
@@ -41,9 +41,9 @@ class OptIn extends React.Component {
 			{ value: '1', label: 'Wednesday, October 10 1 pm EST' },
 			{ value: '6', label: 'Wednesday, October 10 6 pm EST' },
 		]
-		const defaultOption = options[0];
+
 		return (
-			<Dropdown options={options} onChange={this.handleTimeChanged} value={defaultOption}/>
+			<Dropdown className={(this.state.time === '0' && "unselected")} options={options} onChange={this.handleTimeChanged} value={this.state.time}/>
 		)
 	}
 	
@@ -94,14 +94,14 @@ class OptIn extends React.Component {
 		return (
 			<React.Fragment>
 				<h1 className="headline__h1">Oh hey future writing genius</h1>
-				<img className="callout callout--class-large hidden--tablet" src={require("../img/FreeClass-ForDesktop.svg")} alt="free class"/>
+				<img className="callout callout--class-large hidden--laptop-sm-down" src={require("../img/FreeClass-ForDesktop.svg")} alt="free class"/>
 			</React.Fragment>
 		)
 	}
   
   render () {
     return (
-			<LandingPage headlineClass="hidden--tablet">
+			<LandingPage headlineClass="hidden--laptop-sm-down">
 				{this.renderHeadline()}
 				{this.renderBox()}
 			</LandingPage>

@@ -20,6 +20,7 @@ body {
 }
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: #111111;
 }
@@ -37,9 +38,14 @@ h2 {
   line-height: 1.5;
   margin: 0.5em 0;
 }
-@media (max-width: 1199px) {
+@media (max-width: 1919px) {
   h2 {
-    font-size: 2em;
+    font-size: 2.2em;
+  }
+}
+@media (max-width: 1439px) {
+  h2 {
+    font-size: 1.9em;
   }
 }
 @media (max-width: 639px) {
@@ -59,13 +65,14 @@ h3 {
 }
 @media (max-width: 1919px) {
   h3 {
-    font-size: 2.25em;
+    font-size: 2.2em;
   }
 }
-@media (max-width: 1199px) {
+@media (max-width: 1439px) {
   h3 {
     font-size: 2em;
     text-align: center;
+    width: 100%;
   }
 }
 
@@ -158,11 +165,20 @@ a:hover {
 }
 
 .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+}
+.flex__wrap {
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 .flex--space-between {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -182,10 +198,9 @@ a:hover {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+30,fff0ef+30,fff0ef+100 */
   background: #fff0ef;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 25%, #fff0ef 25%, #fff0ef 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 25%, #fff0ef 25%, #fff0ef 100%);
   /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(25%, #ffffff), color-stop(25%, #fff0ef), to(#fff0ef));
   background: linear-gradient(to bottom, #ffffff 0%, #ffffff 25%, #fff0ef 25%, #fff0ef 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$white", endColorstr="$blush",GradientType=0 );
@@ -196,10 +211,9 @@ a:hover {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+30,fff0ef+30,fff0ef+100 */
     background: #fff0ef;
     /* Old browsers */
-    background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 20%, #fff0ef 20%, #fff0ef 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 20%, #fff0ef 20%, #fff0ef 100%);
     /* Chrome10-25,Safari5.1-6 */
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(20%, #ffffff), color-stop(20%, #fff0ef), to(#fff0ef));
     background: linear-gradient(to bottom, #ffffff 0%, #ffffff 20%, #fff0ef 20%, #fff0ef 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$white", endColorstr="$blush",GradientType=0 );
@@ -208,18 +222,31 @@ a:hover {
 }
 
 .headline {
+  -ms-flex-preferred-size: 0;
   flex-basis: 0;
+  -webkit-box-flex: 1.25;
+  -ms-flex-positive: 1.25;
   flex-grow: 1.25;
   padding: 50px 50px 50px 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   position: relative;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 @media (max-width: 1199px) {
   .headline {
     padding: 10%;
+    -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
 }
@@ -311,18 +338,23 @@ a:hover {
 }
 
 .content {
+  -ms-flex-preferred-size: 0;
   flex-basis: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
   flex-grow: 1;
-  background: url("../img/iPhoneAndCircles.png");
-  background-size: 85%;
-  background-repeat: no-repeat;
-  background-position: top;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: -3vw;
+  max-width: 40%;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 @media (max-width: 1199px) {
   .content {
     background-position: center 15%;
+    max-width: 100%;
   }
 }
 @media (max-width: 639px) {
@@ -330,15 +362,35 @@ a:hover {
     background-size: 100%;
   }
 }
+.content__background {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 auto;
+}
 @media (max-width: 1199px) {
-  .content--no-background-small {
-    background: none;
+  .content__background {
+    padding-top: 10%;
   }
+}
+@media (max-width: 1199px) {
+  .content__background--hidden-small {
+    display: none;
+  }
+}
+.content__background_image {
+  max-width: 80%;
 }
 
 .box {
   background: #ffffff;
-  margin-top: auto;
+  margin-top: 0px;
   padding: 15px;
 }
 .box--landing {
@@ -389,8 +441,8 @@ a:hover {
   bottom: 15%;
 }
 .callout--class-small {
-  top: 25px;
-  left: 25px;
+  top: 5%;
+  left: 5%;
 }
 @media screen and (min-width: 1200px) {
   .callout--class-small {
@@ -426,7 +478,10 @@ a:hover {
   position: relative;
 }
 .accent__h6 {
+  -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
 }
 
@@ -468,10 +523,10 @@ a:hover {
 .text_input::-webkit-input-placeholder {
   color: rgba(30, 30, 30, 0.3);
 }
-.text_input::-moz-placeholder {
+.text_input:-ms-input-placeholder {
   color: rgba(30, 30, 30, 0.3);
 }
-.text_input:-ms-input-placeholder {
+.text_input::-ms-input-placeholder {
   color: rgba(30, 30, 30, 0.3);
 }
 .text_input::placeholder {
@@ -485,10 +540,18 @@ a:hover {
   border: 0px;
   border-bottom: solid 1px rgba(30, 30, 30, 0.5);
   padding-left: 0px;
+  padding-right: 10px;
+  margin: 10px 0px;
+  border-radius: 0px;
 }
 .Dropdown-placeholder {
-  color: rgba(30, 30, 30, 0.3);
   font-family: "gotham-book";
+}
+.Dropdown-menu {
+  font-family: "gotham-book";
+}
+.Dropdown-root.unselected .Dropdown-placeholder {
+  color: rgba(30, 30, 30, 0.3);
 }
 
 .signature {
@@ -500,6 +563,7 @@ a:hover {
   border-right: solid 1px rgba(30, 30, 30, 0.5);
   padding-right: 5%;
   margin-right: 15px;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -522,7 +586,12 @@ a:hover {
   display: none;
 }
 @media (max-width: 1199px) {
-  .hidden--tablet {
+  .hidden--laptop-sm-down {
+    display: none;
+  }
+}
+@media (max-width: 1439px) {
+  .hidden--laptop-down {
     display: none;
   }
 }

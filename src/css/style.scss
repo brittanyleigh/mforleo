@@ -62,7 +62,8 @@ body {
   cursor: url('../img/RedPenCursor.png'), auto;
 }
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   color: $default-text;
 }
 
@@ -79,8 +80,11 @@ h2 {
   font-size: 2.4em;
   line-height: 1.5;
   margin: .5em 0;
-  @include for-laptop-sm-down {
-    font-size: 2em;
+  @include for-desktop-down {
+    font-size: 2.2em;
+  }
+  @include for-laptop-down {
+    font-size: 1.9em;
   }
   @include for-tablet-down {
     font-size: 1.5em;
@@ -96,11 +100,12 @@ h3 {
   line-height: 1.25;
   
   @include for-desktop-down {
-    font-size: 2.25em;
+    font-size: 2.2em;
   }
-  @include for-laptop-sm-down {
+  @include for-laptop-down {
     font-size: 2em;
     text-align: center;
+    width: 100%;
   }
 }
 h4 {
@@ -176,11 +181,20 @@ a {
   overflow:hidden;
 }
 .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  &__wrap {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
   &--space-between {
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -201,17 +215,15 @@ a {
   $background-split-small: 20%;
   &__split_blush {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+30,fff0ef+30,fff0ef+100 */
-    background: $blush; /* Old browsers */
-    background: -moz-linear-gradient(top,  $white 0%, $white $background-split-large, $blush $background-split-large, $blush 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  $white 0%,$white $background-split-large,$blush $background-split-large,$blush 100%); /* Chrome10-25,Safari5.1-6 */
+    background: $blush; /* Old browsers */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+    background: -webkit-gradient(linear,  left top, left bottom,  from($white),color-stop($background-split-large, $white),color-stop($background-split-large, $blush),to($blush));
     background: linear-gradient(to bottom,  $white 0%,$white $background-split-large,$blush $background-split-large,$blush 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$blush',GradientType=0 ); /* IE6-9 */
     
     @include for-laptop-sm-down {
       /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+30,fff0ef+30,fff0ef+100 */
-      background: $blush; /* Old browsers */
-      background: -moz-linear-gradient(top,  $white 0%, $white $background-split-small, $blush $background-split-small, $blush 100%); /* FF3.6-15 */
-      background: -webkit-linear-gradient(top,  $white 0%,$white $background-split-small,$blush $background-split-small,$blush 100%); /* Chrome10-25,Safari5.1-6 */
+      background: $blush; /* Old browsers */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+      background: -webkit-gradient(linear,  left top, left bottom,  from($white),color-stop($background-split-small, $white),color-stop($background-split-small, $blush),to($blush));
       background: linear-gradient(to bottom,  $white 0%,$white $background-split-small,$blush $background-split-small,$blush 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$blush',GradientType=0 ); /* IE6-9 */
     }
@@ -221,17 +233,30 @@ a {
 
 // content elements //
 .headline {
-  flex-basis: 0;
-  flex-grow: 1.25;
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  -webkit-box-flex: 1.25;
+      -ms-flex-positive: 1.25;
+          flex-grow: 1.25;
   padding: 50px 50px 50px 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-start;
-  flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   @include for-laptop-sm-down {
     padding: 10%;
-    flex-basis: auto;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
   }
   
   &__h1 {
@@ -307,30 +332,55 @@ a {
 }
 
 .content {
-  flex-basis: 0;
-  flex-grow: 1;
-  background: url('../img/iPhoneAndCircles.png');
-  background-size: 85%;
-  background-repeat: no-repeat;
-  background-position: top;
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: -3vw;
+  max-width: 40%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  
   @include for-laptop-sm-down {
     background-position: center 15%;
+    max-width: 100%;
   }
   @include for-tablet-down {
     background-size: 100%;
   }
-  &--no-background-small {
+
+  &__background {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 auto;
     @include for-laptop-sm-down {
-      background: none;
+      padding-top: 10%;
+    }
+    &--hidden-small {
+      @include for-laptop-sm-down {
+        display: none;
+      }
+    }
+    &_image {
+      max-width: 80%;
     }
   }
 }
 
 .box {
   background: $white;
-  margin-top: auto;
+  margin-top: 0px;
   padding: 15px;
   
   &--landing {
@@ -378,8 +428,8 @@ a {
     bottom: 15%;
   }
   &--class-small {
-    top: 25px;
-    left: 25px;
+    top: 5%;
+    left: 5%;
     @media screen and (min-width: $laptop-sm) {
       display: none;
     }
@@ -409,8 +459,11 @@ a {
   padding: 20px 0px;
   position: relative;
   &__h6 {
-    transform: rotate(180deg);
-  	writing-mode: vertical-rl;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  	-webkit-writing-mode: vertical-rl;
+  	    -ms-writing-mode: tb-rl;
+  	        writing-mode: vertical-rl;
   }
 }
 
@@ -454,10 +507,10 @@ a {
   &::-webkit-input-placeholder {
     color: transparentize($dark, .7);
   }
-  &::-moz-placeholder {
+  &:-ms-input-placeholder {
     color: transparentize($dark, .7);
   }
-  &:-ms-input-placeholder {
+  &::-ms-input-placeholder {
     color: transparentize($dark, .7);
   }
   &::placeholder {
@@ -472,10 +525,20 @@ a {
     border: 0px;
     border-bottom: solid 1px transparentize($dark, .5);
     padding-left: 0px;
+    padding-right: 10px;
+    margin: 10px 0px;
+    border-radius: 0px;
   }
   &-placeholder {
-    color: transparentize($dark, .7);
     font-family: "gotham-book";
+  }
+  &-menu {
+    font-family: "gotham-book";
+  }
+  &-root.unselected {
+    .Dropdown-placeholder {
+      color: transparentize($dark, .7);
+    }
   }
 }
 
@@ -489,7 +552,8 @@ a {
   border-right: solid 1px transparentize($dark, .5);
   padding-right: 5%;
   margin-right: 15px;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 
 
@@ -514,8 +578,13 @@ a {
 // breakpoint modifications //
 .hidden {
   display: none;
-  &--tablet {
+  &--laptop-sm-down {
     @include for-laptop-sm-down {
+      display: none;
+    }
+  }
+  &--laptop-down {
+    @include for-laptop-down {
       display: none;
     }
   }
