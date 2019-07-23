@@ -6,16 +6,31 @@ $laptop: 1440px;
 $desktop: 1920px;
 
 @mixin for-tablet-down {
-  @media (max-width: 639px) { @content; }
-}
-@mixin for-laptop-sm-down {
   @media (max-width: 1199px) { @content; }
 }
-@mixin for-laptop-down {
+@mixin for-laptop-sm-down {
   @media (max-width: 1439px) { @content; }
 }
-@mixin for-desktop-down {
+@mixin for-laptop-down {
   @media (max-width: 1919px) { @content; }
+}
+
+
+
+@mixin for-phone-only {
+  @media (max-width: 639px) { @content; }
+}
+@mixin for-tablet-up {
+  @media (min-width: 640px) { @content; }
+}
+@mixin for-laptop-small-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-laptop-up {
+  @media (min-width: 1440px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1920px) { @content; }
 }
 
 // Colors
@@ -90,13 +105,11 @@ h3 {
   text-align: right;
   line-height: 1.25;
   
-  @include for-desktop-down {
+  @include for-laptop-down {
     font-size: 2.25em;
   }
-  @include for-laptop-down {
-    font-size: 2em;
-  }
   @include for-tablet-down {
+    font-size: 2em;
     text-align: center;
   }
 }
@@ -222,7 +235,7 @@ a {
     font-size: 8em;
     margin: 0px;
     letter-spacing: 20px;
-    @include for-laptop-down {
+    @include for-laptop-sm-down {
       font-size: 7em;
     }
   }
@@ -274,7 +287,7 @@ a {
   &--class-small {
     top: 25px;
     left: 25px;
-    @media screen and (min-width: $tablet) {
+    @media screen and (min-width: $laptop-sm) {
       display: none;
     }
   }
