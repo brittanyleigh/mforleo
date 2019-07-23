@@ -19,6 +19,14 @@ class Success extends React.Component {
       <React.Fragment>
         <h1 className="contrast_color headline__h1 headline__h1--small">"{name} always finds the best stuff."</h1>
         <h4 className="full-width">- Your friends, after you share this free class</h4>
+        <div className="social">
+          <a className="social__link" href="https://facebook.com">
+            <img className="social__icon" src={require("../img/facebook.svg")} alt="facebook icon"/> Share on Facebook
+          </a>
+          <a className="social__link" href="https://twitter.com">
+            <img className="social__icon" src={require("../img/twitter.svg")} alt="twitter icon" /> Share on Twitter
+          </a>
+        </div>
       </React.Fragment>
     )
   }

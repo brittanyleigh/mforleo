@@ -225,7 +225,7 @@ a {
   flex-grow: 1.25;
   padding: 50px 50px 50px 100px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   position: relative;
   justify-content: center;
@@ -245,11 +245,62 @@ a {
       font-size: 6em;
       letter-spacing: 10px;
       @include for-laptop-sm-down {
-        font-size: 4em;
+        font-size: 3em;
+        letter-spacing: 5px;
       }
       @include for-tablet-down {
-        font-size: 2.25em;
-        letter-spacing: 5px;
+        font-size: 2em;
+        letter-spacing: .75px;
+      }
+    }
+  }
+}
+
+.social {
+  color: $secondary_contrast;
+  border-top: solid 1px transparentize($dark, .7);
+  border-bottom: solid 1px transparentize($dark, .7);
+  @include for-laptop-sm-down {
+    border-top: 0px;
+    border-bottom: 0px;
+  }
+  
+  &__icon {
+    max-width: 18px;
+    vertical-align: middle;
+    margin-right: 5px;
+    @include for-tablet-down {
+      max-width: 12px;
+      margin-right: 3px;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    font-family: "gotham-bold";
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 15px 0px;
+    display: inline-block;
+    font-size: .65em;
+    @include for-laptop-sm-down {
+      padding: 5px 0px;
+    }
+    @include for-tablet-down {
+      font-size: 8px;
+      letter-spacing: .85px;
+    }
+    
+    &:first-child {
+      padding-right: 15px;
+      border-right: solid 1px transparentize($dark, .7);
+      @include for-tablet-down {
+        padding-right: 5px;
+      }
+    }
+    &:last-child {
+      padding-left: 15px;
+      @include for-tablet-down {
+        padding-left: 5px;
       }
     }
   }
