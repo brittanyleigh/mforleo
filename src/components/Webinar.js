@@ -64,7 +64,10 @@ class Webinar extends React.Component {
         </main>
         <footer className="footer constrained_width box box--transparent centered">
           <div className="footer__links uppercase">
-            © marie forleo international  |  terms  |  privacy policy  |  contact
+            <a href="https://www.marieforleo.com/" className="link footer__link">© marie forleo international</a>  |
+            <a href="https://www.marieforleo.com/" className="link footer__link"> terms</a>  |
+            <a href="https://www.marieforleo.com/" className="link footer__link"> privacy policy</a>  |
+            <a href="https://www.marieforleo.com/" className="link footer__link"> contact</a>
           </div>
           <div className="footer__policies">
             <p className="p">

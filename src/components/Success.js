@@ -4,7 +4,7 @@ import LandingPage from './LandingPage';
 
 class Success extends React.Component {
   componentDidMount() {
-    const { time } = this.props.user;
+    const time = this.props.user.time !== undefined ? this.props.user.time : '1';
     
     setTimeout(() => { 
       this.props.history.push(`/webinar/${time}`);
@@ -12,7 +12,7 @@ class Success extends React.Component {
   }
   
   renderHeadline = () => {
-    const { name } = this.props.user;
+    const name = this.props.user.name !== undefined ? this.props.user.name : 'She';
     
     return (
       <React.Fragment>

@@ -576,6 +576,13 @@ body {
   font-size: 0.5em;
   line-height: 2;
 }
+.footer__link {
+  color: #1e1e1e;
+  text-decoration: none;
+}
+.footer__link:hover {
+  cursor: pointer;
+}
 .footer__policies {
   font-size: 0.7em;
   max-width: 75%;
