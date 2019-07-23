@@ -36,6 +36,11 @@ h2 {
   font-size: 2em;
   line-height: 1.5;
 }
+@media (max-width: 1439px) {
+  h2 {
+    font-size: 1.75em;
+  }
+}
 
 h3 {
   font-family: "Chocolates-Bold", Arial, sans-serif;
@@ -46,17 +51,17 @@ h3 {
   text-align: right;
   line-height: 1.25;
 }
-@media (max-width: 1920px) {
+@media (max-width: 1919px) {
   h3 {
     font-size: 2.25em;
   }
 }
-@media (max-width: 1440px) {
+@media (max-width: 1439px) {
   h3 {
     font-size: 2em;
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   h3 {
     text-align: center;
   }
@@ -72,6 +77,7 @@ h5 {
   color: #f9e618;
   letter-spacing: 2px;
   text-transform: uppercase;
+  margin: 0px;
 }
 
 h6 {
@@ -118,7 +124,7 @@ a:hover {
   max-width: 65%;
   margin: 0 auto;
 }
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   .constrained_width {
     max-width: 90%;
   }
@@ -146,15 +152,10 @@ a:hover {
 }
 
 .container {
-  border: solid 3vw #ffffff;
+  border: solid 1.5vw #ffffff;
   min-height: 100vh;
 }
-@media (max-width: 1440px) {
-  .container {
-    border-width: 1.5vw;
-  }
-}
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   .container {
     border-width: 0px;
   }
@@ -175,7 +176,7 @@ a:hover {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$white", endColorstr="$blush",GradientType=0 );
   /* IE6-9 */
 }
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   .container__split_blush {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+30,fff0ef+30,fff0ef+100 */
     background: #fff0ef;
@@ -194,15 +195,22 @@ a:hover {
 .headline {
   flex-basis: 0;
   flex-grow: 6;
-  padding: 50px;
+  padding: 50px 50px 50px 100px;
   display: flex;
   align-items: center;
   flex-direction: column;
   position: relative;
+  justify-content: center;
 }
 .headline__h1 {
   font-size: 8em;
   margin: 0px;
+  letter-spacing: 20px;
+}
+@media (max-width: 1439px) {
+  .headline__h1 {
+    font-size: 7em;
+  }
 }
 
 .content {
@@ -221,15 +229,9 @@ a:hover {
   padding: 15px;
 }
 .box--landing {
-  padding: 15%;
+  padding: 10% 15%;
 }
-@media (max-width: 1440px) {
-  .box--landing {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-}
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   .box--landing {
     margin-left: 0;
     margin-right: 0;
@@ -238,6 +240,11 @@ a:hover {
 .box--transparent {
   background: transparent;
   padding: 15px 0px;
+}
+@media (max-width: 1439px) {
+  .box__p {
+    font-size: 0.95em;
+  }
 }
 
 .callout {
@@ -267,7 +274,7 @@ a:hover {
   right: 15%;
   max-width: 15%;
 }
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   .callout--circles {
     max-width: 25%;
     top: -5%;
@@ -358,7 +365,7 @@ a:hover {
 .hidden {
   display: none;
 }
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   .hidden--tablet {
     display: none;
   }

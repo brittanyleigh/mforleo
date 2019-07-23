@@ -79,7 +79,7 @@ class OptIn extends React.Component {
 			return (
 				<React.Fragment>
 					<h5>Register Now:</h5>
-					<h2>5 Writing Mistakes That Are <span className="highlight">Killing Your Sales</span></h2>
+					<h2>5 Writing Mistakes That <br/>Are <span className="highlight">Killing Your Sales</span></h2>
 					<p className="box__p">Get the 5 easy fixes that take you from "crickets" to clamoring fans and buyers.</p>
 					<button className="btn btn--primary" onClick={this.handleShowForm}>
 						Yes!! Save my seat!

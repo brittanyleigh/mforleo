@@ -6,16 +6,16 @@ $laptop: 1440px;
 $desktop: 1920px;
 
 @mixin for-tablet-down {
-  @media (max-width: 640px) { @content; }
+  @media (max-width: 639px) { @content; }
 }
 @mixin for-laptop-sm-down {
-  @media (max-width: 1200px) { @content; }
+  @media (max-width: 1199px) { @content; }
 }
 @mixin for-laptop-down {
-  @media (max-width: 1440px) { @content; }
+  @media (max-width: 1439px) { @content; }
 }
 @mixin for-desktop-down {
-  @media (max-width: 1920px) { @content; }
+  @media (max-width: 1919px) { @content; }
 }
 
 // Colors
@@ -77,6 +77,9 @@ h2 {
   font-family: $crimson;
   font-size: 2em;
   line-height: 1.5;
+  @include for-laptop-down {
+    font-size: 1.75em;
+  }
 }
 h3 {
   font-family: $chocolates-bold;
@@ -106,6 +109,7 @@ h5 {
   color: $contrast;
   letter-spacing: 2px;
   text-transform: uppercase;
+  margin: 0px;
 }
 h6 {
   font-family: $gotham-bold;
@@ -171,12 +175,9 @@ a {
 
 // containers //
 .container {
-  border: solid 3vw $white;
+  border: solid 1.5vw $white;
   min-height: 100vh;
 
-  @include for-laptop-down {
-    border-width: 1.5vw;
-  }
   @include for-tablet-down {
     border-width: 0px;  
   }
@@ -210,15 +211,20 @@ a {
 .headline {
   flex-basis: 0;
   flex-grow: 6;
-  padding: 50px;
+  padding: 50px 50px 50px 100px;
   display: flex;
   align-items: center;
   flex-direction: column;
   position: relative;
+  justify-content: center;
   
   &__h1 {
     font-size: 8em;
     margin: 0px;
+    letter-spacing: 20px;
+    @include for-laptop-down {
+      font-size: 7em;
+    }
   }
 }
 
@@ -238,11 +244,7 @@ a {
   padding: 15px;
   
   &--landing {
-    padding: 15%;
-    @include for-laptop-down {
-      margin-left: 10%;
-      margin-right: 10%;
-    }
+    padding: 10% 15%;
     @include for-tablet-down {
       margin-left: 0;
       margin-right: 0;
@@ -251,6 +253,11 @@ a {
   &--transparent {
     background: transparent;
     padding: 15px 0px;
+  }
+  &__p {
+    @include for-laptop-down {
+      font-size: .95em;
+    }
   }
 }
 
